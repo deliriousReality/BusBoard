@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <title>BusBoard</title>
-{% if name %}
-    <h1>Hello {{name}}</h1>
-{% else %}
-    <h1>Hello World!</h1>
-{% endif %}
+
+
+
+<table>
+    <tr>
+        <th>Line Number</th>
+        <th>Destination</th>
+        <th>Time</th>
+    </tr>
+    {% for bus in buses %}
+    <tr>
+        <td>{{ bus.line }}</td>
+        <td>{{ bus.direction }}</td>
+        <td>{{ bus.expected_departure_time }}</td>
+    </tr>
+    {% endfor %}
+</table>
